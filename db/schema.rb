@@ -10,10 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_25_204436) do
+ActiveRecord::Schema.define(version: 2021_02_25_211627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "gifts", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "recipients", force: :cascade do |t|
+    t.string "name"
+    t.bigint "users_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["users_id"], name: "index_recipients_on_users_id"
+  end
+
+  create_table "session_gifts", force: :cascade do |t|
+    t.bigint "gifts_id", null: false
+    t.bigint "shortlists_id", null: false
+    t.boolean "selected"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["gifts_id"], name: "index_session_gifts_on_gifts_id"
+    t.index ["shortlists_id"], name: "index_session_gifts_on_shortlists_id"
+  end
+
+  create_table "shortlists", force: :cascade do |t|
+    t.bigint "recipients_id", null: false
+    t.bigint "users_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["recipients_id"], name: "index_shortlists_on_recipients_id"
+    t.index ["users_id"], name: "index_shortlists_on_users_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +56,15 @@ ActiveRecord::Schema.define(version: 2021_02_25_204436) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "recipients", "users", column: "users_id"
+  add_foreign_key "session_gifts", "gifts", column: "gifts_id"
+  add_foreign_key "session_gifts", "shortlists", column: "shortlists_id"
+  add_foreign_key "shortlists", "recipients", column: "recipients_id"
+  add_foreign_key "shortlists", "users", column: "users_id"
 end
