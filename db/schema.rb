@@ -40,11 +40,10 @@ ActiveRecord::Schema.define(version: 2021_02_25_211627) do
   end
 
   create_table "shortlists", force: :cascade do |t|
-    t.bigint "recipient_id", null: false
     t.bigint "user_id", null: false
+    t.string "recipient_name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["recipient_id"], name: "index_shortlists_on_recipient_id"
     t.index ["user_id"], name: "index_shortlists_on_user_id"
   end
 
@@ -65,6 +64,5 @@ ActiveRecord::Schema.define(version: 2021_02_25_211627) do
   add_foreign_key "recipients", "users"
   add_foreign_key "session_gifts", "gifts"
   add_foreign_key "session_gifts", "shortlists"
-  add_foreign_key "shortlists", "recipients"
   add_foreign_key "shortlists", "users"
 end
