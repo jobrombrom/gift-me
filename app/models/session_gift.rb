@@ -1,4 +1,4 @@
 class SessionGift < ApplicationRecord
-  belongs_to :gifts
-  belongs_to :shortlists
+  belongs_to :gift
+  belongs_to :shortlist
 end
