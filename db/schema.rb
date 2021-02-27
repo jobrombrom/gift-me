@@ -23,29 +23,29 @@ ActiveRecord::Schema.define(version: 2021_02_25_211627) do
 
   create_table "recipients", force: :cascade do |t|
     t.string "name"
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_recipients_on_users_id"
+    t.index ["user_id"], name: "index_recipients_on_user_id"
   end
 
   create_table "session_gifts", force: :cascade do |t|
-    t.bigint "gifts_id", null: false
-    t.bigint "shortlists_id", null: false
+    t.bigint "gift_id", null: false
+    t.bigint "shortlist_id", null: false
     t.boolean "selected"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["gifts_id"], name: "index_session_gifts_on_gifts_id"
-    t.index ["shortlists_id"], name: "index_session_gifts_on_shortlists_id"
+    t.index ["gift_id"], name: "index_session_gifts_on_gift_id"
+    t.index ["shortlist_id"], name: "index_session_gifts_on_shortlist_id"
   end
 
   create_table "shortlists", force: :cascade do |t|
-    t.bigint "recipients_id", null: false
-    t.bigint "users_id", null: false
+    t.bigint "recipient_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["recipients_id"], name: "index_shortlists_on_recipients_id"
-    t.index ["users_id"], name: "index_shortlists_on_users_id"
+    t.index ["recipient_id"], name: "index_shortlists_on_recipient_id"
+    t.index ["user_id"], name: "index_shortlists_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,9 +62,9 @@ ActiveRecord::Schema.define(version: 2021_02_25_211627) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "recipients", "users", column: "users_id"
-  add_foreign_key "session_gifts", "gifts", column: "gifts_id"
-  add_foreign_key "session_gifts", "shortlists", column: "shortlists_id"
-  add_foreign_key "shortlists", "recipients", column: "recipients_id"
-  add_foreign_key "shortlists", "users", column: "users_id"
+  add_foreign_key "recipients", "users"
+  add_foreign_key "session_gifts", "gifts"
+  add_foreign_key "session_gifts", "shortlists"
+  add_foreign_key "shortlists", "recipients"
+  add_foreign_key "shortlists", "users"
 end
