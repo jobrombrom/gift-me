@@ -4,5 +4,7 @@
 <ul>
   <% @gifts.each do |gift| %>
   <li><%= gift.title %></li>
+  <li><%= link_to "Add to shortlist",
+  shortlist_session_gifts_path(@shortlist, gift_id: gift.id ), method: :post  %></li>
   <% end %>
 </ul>
