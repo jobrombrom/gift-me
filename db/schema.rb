@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_25_211627) do
+ActiveRecord::Schema.define(version: 2021_03_02_194933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_02_25_211627) do
   create_table "session_gifts", force: :cascade do |t|
     t.bigint "gift_id", null: false
     t.bigint "shortlist_id", null: false
-    t.boolean "selected"
+    t.boolean "selected", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["gift_id"], name: "index_session_gifts_on_gift_id"

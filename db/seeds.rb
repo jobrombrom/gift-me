@@ -18,6 +18,7 @@
 end
 
 
-100.times do
-  Gift.create!(title: Faker::Commerce.product_name)
+10.times do
+  # added unique so different products when seeding
+  Gift.create!(title: Faker::Commerce.unique.product_name)
 end
