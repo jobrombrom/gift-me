@@ -6,19 +6,41 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-2.times do
-  first_name = Faker::Name.first_name
-  last_name = Faker::Name.last_name
-  domain = Faker::Internet.domain_name
-  email = Faker::Internet.email(
-    name: "#{first_name} #{last_name}",
-    separators: '_',
-    domain: domain)
-  User.create!(first_name: first_name, last_name: last_name, email: email, password: 'password')
-end
+# 2.times do
+#   first_name = Faker::Name.first_name
+#   last_name = Faker::Name.last_name
+#   domain = Faker::Internet.domain_name
+#   email = Faker::Internet.email(
+#     name: "#{first_name} #{last_name}",
+#     separators: '_',
+#     domain: domain)
+#   User.create!(first_name: first_name, last_name: last_name, email: email, password: 'password')
+# end
 
 
-10.times do
-  # added unique so different products when seeding
-  Gift.create!(title: Faker::Commerce.unique.product_name)
+# 100.times do
+#   Gift.create!(title: Faker::Commerce.product_name)
+# end
+require 'open-uri'
+require 'json'
+
+puts "Creating Gifts"
+
+etsy_api = JSON.parse(open("https://openapi.etsy.com/v2/listings/active?limit=100&offset=600&currency_code=GBP&api_key=lb0tia9t2gxo8956aapcdi9g").read)
+etsy_listings = etsy_api["results"]
+etsy_listings.each do |l|
+  image_api = JSON.parse(open("https://openapi.etsy.com/v2/listings/#{l["listing_id"]}/images?api_key=lb0tia9t2gxo8956aapcdi9g").read)
+  image_listings = image_api["results"]
+  gift = Gift.create(
+    title: l["title"].capitalize,
+    description: l["description"],
+    link: l["url"],
+    image: image_listings[0]["url_570xN"],
+    price: l["price"],
+    main_category: l["taxonomy_path"].first,
+    sub_category: l["taxonomy_path"].last,
+    )
+  puts "Gift #{gift.id} has been created"
 end
+
+puts "Done"
