@@ -40,7 +40,6 @@ etsy_listings.each do |l|
     main_category: l["taxonomy_path"].first,
     sub_category: l["taxonomy_path"].last,
     )
-
   puts "Gift #{gift.id} has been created"
 end
 
