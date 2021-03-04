@@ -24,18 +24,24 @@
 require 'open-uri'
 require 'json'
 
-etsy_api = JSON.parse(open("https://openapi.etsy.com/v2/listings/active?limit=10&offset=0&currency_code=GBP&api_key=lb0tia9t2gxo8956aapcdi9g").read)
+puts "Creating Gifts"
+
+etsy_api = JSON.parse(open("https://openapi.etsy.com/v2/listings/active?limit=100&offset=600&currency_code=GBP&api_key=lb0tia9t2gxo8956aapcdi9g").read)
 etsy_listings = etsy_api["results"]
-etsy_listings.each_with_index do |l, index|
+etsy_listings.each do |l|
   image_api = JSON.parse(open("https://openapi.etsy.com/v2/listings/#{l["listing_id"]}/images?api_key=lb0tia9t2gxo8956aapcdi9g").read)
-  image_listing = image_api["results"]
-  puts "---------"
-  puts "#{index + 1}. Title: #{l["title"].capitalize}"
-  puts "Description: #{l["description"]}"
-  puts "Link: #{l["url"]}"
-  puts "Image: #{image_listing[0]["url_570xN"]}"
-  puts "Price: £#{l["price"]}."
-  puts "Main Category: #{l["taxonomy_path"].first}"
-  puts "Sub Category: #{l["taxonomy_path"].last}"
-  puts "---------"
+  image_listings = image_api["results"]
+  gift = Gift.create(
+    title: l["title"].capitalize,
+    description: l["description"],
+    link: l["url"],
+    image: image_listings[0]["url_570xN"],
+    price: l["price"],
+    main_category: l["taxonomy_path"].first,
+    sub_category: l["taxonomy_path"].last,
+    )
+
+  puts "Gift #{gift.id} has been created"
 end
+
+puts "Done"
