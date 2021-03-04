@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 2021_03_02_194933) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "recipients", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_recipients_on_user_id"
+  end
+
   create_table "session_gifts", force: :cascade do |t|
     t.bigint "gift_id", null: false
     t.bigint "shortlist_id", null: false
@@ -36,6 +44,7 @@ ActiveRecord::Schema.define(version: 2021_03_02_194933) do
     t.string "recipient_name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "interest"
     t.index ["user_id"], name: "index_shortlists_on_user_id"
   end
 
@@ -53,6 +62,7 @@ ActiveRecord::Schema.define(version: 2021_03_02_194933) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "recipients", "users"
   add_foreign_key "session_gifts", "gifts"
   add_foreign_key "session_gifts", "shortlists"
   add_foreign_key "shortlists", "users"

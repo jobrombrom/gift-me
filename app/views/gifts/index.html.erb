@@ -2,9 +2,24 @@
 <p>Find me in app/views/gifts/index.html.erb</p>
 
 <ul>
-  <% @gifts.each do |gift| %>
-  <li><%= gift.title %></li>
-  <li><%= link_to "Add to shortlist",
-  shortlist_session_gifts_path(@shortlist, gift_id: gift.id ), method: :post  %></li>
+  <% @gifts.each_with_index do |gift, index| %>
+  <% if index == 0 %>
+    <div id = <%= gift.id %>>
+      <li><%= gift.title %></li>
+      <li><%= link_to "Add",
+        shortlist_session_gifts_path(@shortlist, gift_id: gift.id ), method: :post, remote: true  %>
+        <a href="#">Reject</a>
+        </li>
+    </div>
+  <% else %>
+  <div id = <%= gift.id %> hidden>
+    <li><%= gift.title %></li>
+    <li><%= link_to "Add",
+      shortlist_session_gifts_path(@shortlist, gift_id: gift.id , added: 'true'), method: :post, remote: true  %>
+     <%= link_to "Reject",
+      shortlist_session_gifts_path(@shortlist, gift_id: gift.id , added: 'false'), method: :post, remote: true  %>
+      </li>
+  </div>
+  <% end %>
   <% end %>
 </ul>

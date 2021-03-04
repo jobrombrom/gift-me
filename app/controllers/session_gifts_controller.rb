@@ -2,10 +2,17 @@ class SessionGiftsController < ApplicationController
   def create
     @session_gift = SessionGift.new(session_gift_parameters)
     @shortlist = @session_gift.shortlist
-    if @session_gift.save
-      redirect_to shortlist_gifts_path(@shortlist)
-    else
-      redirect_to shortlist_new_path
+
+    respond_to do |format|
+      if params[:added] == 'false'
+        format.html { redirect_to shortlist_gifts_path(@shortlist) }
+        format.js
+      elsif @session_gift.save
+        format.html { redirect_to shortlist_gifts_path(@shortlist) }
+        format.js
+      else
+        format.html { redirect_to shortlist_new_path }
+      end
     end
   end
 
