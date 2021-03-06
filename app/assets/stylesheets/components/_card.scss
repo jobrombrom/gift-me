@@ -1,8 +1,11 @@
 .card-img {
   object-fit: cover;
-  width: 15vw;
-  height: 100%;
   border-radius: 4px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 15vw;
 }
 
 .card-title {
@@ -11,6 +14,7 @@
 }
 
 .card {
+  display: flex;
   padding: 8px;
   margin: 8px;
   border-radius: 4px;
