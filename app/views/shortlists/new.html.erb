@@ -1,6 +1,20 @@
-<h1>Hello</h1>
+<style>
+body {background-color: #FFE2E2;}
+</style>
 
-<%= simple_form_for [@shortlist] do |f|%>
-  <%= f.input :recipient_name %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <h1>Welcome to</h1>
+  <h1>Gift.me</h1>
+  <p>Who are you gifting today?</p>
+</div>
+
+ <div class="container">
+  <%= simple_form_for [@shortlist] do |f|%>
+    <%= f.input :recipient_name %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+<div class="">
+  <%= image_tag("Background_homepage.jpeg", width: '100%')%>
+</div>
