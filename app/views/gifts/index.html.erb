@@ -1,25 +1,43 @@
 <h1>Gifts#index</h1>
 <p>Find me in app/views/gifts/index.html.erb</p>
 
-<ul>
-  <% @gifts.each_with_index do |gift, index| %>
-  <% if index == 0 %>
-    <div id = <%= gift.id %>>
-      <li><%= gift.title %></li>
-      <li><%= link_to "Add",
-        shortlist_session_gifts_path(@shortlist, gift_id: gift.id ), method: :post, remote: true  %>
-        <a href="#">Reject</a>
-        </li>
-    </div>
-  <% else %>
-  <div id = <%= gift.id %> hidden>
-    <li><%= gift.title %></li>
-    <li><%= link_to "Add",
-      shortlist_session_gifts_path(@shortlist, gift_id: gift.id , added: 'true'), method: :post, remote: true  %>
-     <%= link_to "Reject",
-      shortlist_session_gifts_path(@shortlist, gift_id: gift.id , added: 'false'), method: :post, remote: true  %>
-      </li>
-  </div>
+<div id="gifts-listing">
+  <ul>
+    <% @gifts.each_with_index do |gift, index| %>
+      <% if index == 0 %>
+        <div id = <%= gift.id %>>
+          <li><%= gift.title %></li>
+          <li>
+            <%= link_to "Add",
+                shortlist_session_gifts_path(@shortlist, gift_id: gift.id , added: 'true'), method: :post, remote: true  %>
+            <%= link_to "Reject",
+                shortlist_session_gifts_path(@shortlist, gift_id: gift.id , added: 'false'), method: :post, remote: true  %>
+            </li>
+        </div>
+      <% else %>
+      <div id = <%= gift.id %> hidden>
+        <li><%= gift.title %></li>
+        <li>
+          <%= link_to "Add",
+              shortlist_session_gifts_path(@shortlist, gift_id: gift.id , added: 'true'), method: :post, remote: true  %>
+         <%= link_to "Reject",
+              shortlist_session_gifts_path(@shortlist, gift_id: gift.id , added: 'false'), method: :post, remote: true  %>
+          </li>
+      </div>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <a class="btn btn-primary" id= "shortlist-button">Shortlist</a>
+
+</div>
+
+<div id="shortlisted-gifts" class = "container list-container" hidden>
+  <a class="btn btn-primary" id= "gifts-button">Keep Looking</a>
+  <% @shortlist.gifts.each do |gift| %>
+    <%= render 'components/card_horizontal', gift: gift %>
   <% end %>
-  <% end %>
-</ul>
+</div>
+
+
+<%= javascript_pack_tag 'shortlist_swipe.js' %>

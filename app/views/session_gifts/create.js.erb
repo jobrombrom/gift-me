@@ -2,3 +2,14 @@ hideElement = document.getElementById("<%= @session_gift.gift.id %>");
 hideElement.hidden = true;
 showElement = hideElement.nextElementSibling
 showElement.hidden = false;
+
+shortlist = document.querySelector("#shortlisted-gifts")
+
+console.log("<%= @added %>")
+
+if ("<%= @added %>" == "true") {
+  newSG = document.createElement("div");
+  newSG.innerHTML = "<%= escape_javascript render 'components/card_horizontal', gift: @session_gift.gift %>";
+  shortlist.append(newSG);
+}
+
