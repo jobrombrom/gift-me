@@ -1,8 +1,14 @@
 .card-horizontal {
-  flex: 1 1 auto;
+  display: flex;
+  height: 240px;
 }
 
 .card-img-left {
   width: 15vw;
   height: 100%;
+}
+
+.card-horizontal .card-body {
+  width: 100%;
+  overflow: hidden;
 }
