@@ -4,7 +4,7 @@
   <p class="d-flex justify-content-center">Find the perfect pressie for <%= @shortlist.recipient_name %></p>
 
   
-
+  <div id="gifts-listing">
     <% @gifts.each_with_index do |gift, index| %>
       <% if index == 0 %>
         <div class="row row-center" id="gift-<%= gift.id %>">
@@ -42,5 +42,15 @@
 
       <% end %>
     <% end %>
+       <a class="btn btn-primary" id= "shortlist-button">Shortlist</a>
     </div>
 
+<div id="shortlisted-gifts" class = "container list-container" hidden>
+  <a class="btn btn-primary" id= "gifts-button">Keep Looking</a>
+  <% @shortlist.gifts.each do |gift| %>
+    <%= render 'components/card_horizontal', gift: gift %>
+  <% end %>
+</div>
+
+
+<%= javascript_pack_tag 'shortlist_swipe.js' %>
