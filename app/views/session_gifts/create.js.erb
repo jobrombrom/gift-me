@@ -1,4 +1,5 @@
-hideElement = document.getElementById("<%= @session_gift.gift.id %>");
+hideElement = document.getElementById("gift-<%= @session_gift.gift.id %>");
+console.log(hideElement)
 hideElement.hidden = true;
 showElement = hideElement.nextElementSibling
 showElement.hidden = false;
