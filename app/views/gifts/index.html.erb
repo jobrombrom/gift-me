@@ -8,36 +8,35 @@
     <% @gifts.each_with_index do |gift, index| %>
       <% if index == 0 %>
         <div class="row row-center" id="gift-<%= gift.id %>">
-
-        <div class="col-4 gift-choice gift-add">
-          <%= link_to "Add",
-            shortlist_session_gifts_path(@shortlist, gift_id: gift.id ), method: :post, remote: true, class: "btn btn-success"  %>
-        </div>
-        <div class="col-4">
-          <%= render 'components/card', gift: gift %>
-        </div>
-        
-        <div class="col-4 gift-choice gift-reject">
-          <%= link_to "Reject",
-          shortlist_session_gifts_path(@shortlist, gift_id: gift.id , added: 'false'), method: :post, remote: true, class: "btn btn-danger" %>
-        </div>
+          <div class="col-4 gift-choice gift-reject">
+            <%= link_to "Reject",
+            shortlist_session_gifts_path(@shortlist, gift_id: gift.id , added: 'false'), method: :post, remote: true, class: "btn btn-danger" %>
+          </div>
+          
+          <div class="col-4">
+            <%= render 'components/card', gift: gift %>
+          </div>
+          
+          <div class="col-4 gift-choice gift-add">
+            <%= link_to "Add",
+              shortlist_session_gifts_path(@shortlist, gift_id: gift.id ), method: :post, remote: true, class: "btn btn-success"  %>
+          </div>
         </div>
       <% else %>
         <div class="row row-center" id="gift-<%= gift.id %>" hidden >
 
-         
-          <div class="col-4 gift-choice gift-add">
-            <%= link_to "Add",
-              shortlist_session_gifts_path(@shortlist, gift_id: gift.id , added: 'true'), method: :post, remote: true, class: "btn btn-success"  %>
-          </div>
-
-          <div class="col-4">
-            <%= render 'components/card', gift: gift %>  
-          </div>
-
           <div class="col-4 gift-choice gift-reject">
             <%= link_to "Reject",
               shortlist_session_gifts_path(@shortlist, gift_id: gift.id , added: 'false'), method: :post, remote: true,  class: "btn btn-danger" %>
+          </div>
+          
+          <div class="col-4">
+            <%= render 'components/card', gift: gift %>  
+          </div>
+          
+          <div class="col-4 gift-choice gift-add">
+            <%= link_to "Add",
+              shortlist_session_gifts_path(@shortlist, gift_id: gift.id , added: 'true'), method: :post, remote: true, class: "btn btn-success"  %>
           </div>
         </div>
 
