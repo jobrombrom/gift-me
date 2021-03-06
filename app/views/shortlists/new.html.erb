@@ -1,6 +1,24 @@
+<div class="container">
 <h1>Hello</h1>
-
 <%= simple_form_for [@shortlist] do |f|%>
   <%= f.input :recipient_name %>
+  <%= f.input :interest, as: :check_boxes, collection: [
+    "Pet Supplies",
+    "Clothing",
+    "Home & Living",
+    "Jewelry",
+    "Art & Collectibles",
+    "Bags & Purses",
+    "Craft Supplies & Tools",
+    "Electronics & Accessories",
+    "Accessories",
+    "Books, Movies & Music",
+    "Weddings",
+    "Shoes",
+    "Toys & Games",
+    "Bath & Beauty",
+    "Paper & Party Supplies"
+  ] %>
   <%= f.submit %>
 <% end %>
+</div>
