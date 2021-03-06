@@ -1,7 +1,7 @@
 <div class="container" height="100%"; >
 
   <h1 class="d-flex justify-content-center">Gift.me</h1>
-  <p class="d-flex justify-content-center">Find the perfect pressie for <%= @shortlist.recipient_name %></p>
+  <p class="d-flex justify-content-center">Find the perfect pressie for <%= @shortlist.recipient_name.capitalize %></p>
 
 
   <div id="gifts-listing">
@@ -50,7 +50,9 @@
   </div>
 
 <div id="shortlisted-gifts" class = "container list-container" hidden>
-  <a class="btn btn-primary" id= "gifts-button">Keep Looking</a>
+  <div class="mt-3 pt-3 shortlist-choice row row-center">
+    <a class="btn btn-primary" id= "gifts-button">Keep Looking</a>
+  </div>
   <% @shortlist.gifts.each do |gift| %>
     <%= render 'components/card_horizontal', gift: gift %>
   <% end %>
