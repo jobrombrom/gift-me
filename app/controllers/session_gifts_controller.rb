@@ -6,10 +6,8 @@ class SessionGiftsController < ApplicationController
 
     respond_to do |format|
       if @added == 'false'
-        format.html { redirect_to shortlist_gifts_path(@shortlist) }
         format.js
       elsif @session_gift.save
-        format.html { redirect_to shortlist_gifts_path(@shortlist) }
         format.js
       else
         format.html { redirect_to shortlist_new_path }

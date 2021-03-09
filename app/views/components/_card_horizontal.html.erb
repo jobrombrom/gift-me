@@ -6,10 +6,8 @@
         <h5 class="card-title text-truncate"><%= session_gift.gift.title %></h5>
         <p class="card-text text-truncate"><%= session_gift.gift.description %></p>
         <p class="card-price">£<%= session_gift.gift.price %></p>
-        <% unless session_gift.id.nil? %>
-          <%= link_to 'Remove', session_gift_path(session_gift), method: :delete, remote: true %>
-          <%= link_to "It's the one!", session_gift_path(session_gift) %>
-        <% end %>
+        <%= link_to 'Remove', session_gift_path(session_gift), method: :delete, remote: true %>
+        <%= link_to "It's the one!", session_gift_path(session_gift) %>
       </div>
     </div>
   </div>
