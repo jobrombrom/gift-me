@@ -10,7 +10,7 @@ console.log("<%= @added %>")
 
 if ("<%= @added %>" == "true") {
   newSG = document.createElement("div");
-  newSG.innerHTML = "<%= escape_javascript render 'components/card_horizontal', gift: @session_gift.gift %>";
+  newSG.innerHTML = "<%= escape_javascript render 'components/card_horizontal', session_gift: @session_gift %>";
   shortlist.append(newSG);
 }
 

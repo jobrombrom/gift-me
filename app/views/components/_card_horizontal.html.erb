@@ -1,11 +1,11 @@
-<div class="d-flex justify-content-center">
-  <div class="card">
+  <div class="d-flex justify-content-center">
+  <div class="card" id="shortlist-gift-<%= session_gift.id %>">
     <div class="card-horizontal">
-      <img class="card-img card-img-left" src=<%= gift.image %> alt="image of <%= gift.title %>" width="240px">
+      <img class="card-img card-img-left" src=<%= session_gift.gift.image %> alt="image of <%= session_gift.gift.title %>" width="240px">
       <div class="card-body">
-        <h5 class="card-title text-truncate"><%= gift.title %></h5>
-        <p class="card-text text-truncate"><%= gift.description %></p>
-        <p class="card-price">£<%= gift.price %></p>
+        <h5 class="card-title text-truncate"><%= session_gift.gift.title %></h5>
+        <p class="card-text text-truncate"><%= session_gift.gift.description %></p>
+        <p class="card-price">£<%= session_gift.gift.price %></p>
       </div>
     </div>
   </div>
