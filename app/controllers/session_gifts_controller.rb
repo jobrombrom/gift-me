@@ -17,6 +17,18 @@ class SessionGiftsController < ApplicationController
     end
   end
 
+  def destroy
+    @session_gift = SessionGift.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
+    @session_gift.destroy!
+  end
+
+  def show
+    @session_gift = SessionGift.find(params[:id])
+  end
+
   private
 
   def session_gift_parameters
