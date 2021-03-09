@@ -11,6 +11,23 @@ body {background-color: #FFE2E2;}
  <div class="container">
   <%= simple_form_for [@shortlist] do |f|%>
     <%= f.input :recipient_name %>
+    <%= f.input :interest, as: :check_boxes, collection: [
+    "Pet Supplies",
+    "Clothing",
+    "Home & Living",
+    "Jewelry",
+    "Art & Collectibles",
+    "Bags & Purses",
+    "Craft Supplies & Tools",
+    "Electronics & Accessories",
+    "Accessories",
+    "Books, Movies & Music",
+    "Weddings",
+    "Shoes",
+    "Toys & Games",
+    "Bath & Beauty",
+    "Paper & Party Supplies"
+    ] %>
     <%= f.submit %>
   <% end %>
 </div>

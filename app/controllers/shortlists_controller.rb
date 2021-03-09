@@ -1,6 +1,7 @@
 class ShortlistsController < ApplicationController
 
   def new
+    @gift_categories = Gift.find_by_sql("SELECT main_category FROM gifts GROUP BY main_category;")
     @shortlist = Shortlist.new
   end
 
@@ -24,6 +25,6 @@ class ShortlistsController < ApplicationController
   private
 
   def shortlist_params
-    params.require(:shortlist).permit(:recipient_name)
+    params.require(:shortlist).permit(:recipient_name, interest: [])
   end
 end
