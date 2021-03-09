@@ -19,6 +19,7 @@ class ShortlistsController < ApplicationController
   end
 
   def show
+    @shortlist = Shortlist.find(params[:id])
   end
 
   private

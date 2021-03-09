@@ -26,7 +26,7 @@ require 'json'
 
 puts "Creating Gifts"
 
-etsy_api = JSON.parse(open("https://openapi.etsy.com/v2/listings/active?limit=100&offset=600&currency_code=GBP&api_key=lb0tia9t2gxo8956aapcdi9g").read)
+etsy_api = JSON.parse(open("https://openapi.etsy.com/v2/listings/active?limit=100&offset=0&currency_code=GBP&api_key=lb0tia9t2gxo8956aapcdi9g").read)
 etsy_listings = etsy_api["results"]
 etsy_listings.each do |l|
   image_api = JSON.parse(open("https://openapi.etsy.com/v2/listings/#{l["listing_id"]}/images?api_key=lb0tia9t2gxo8956aapcdi9g").read)

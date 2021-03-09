@@ -1,0 +1,20 @@
+.gift-choice {    
+    align-items: center;
+    position: relative;
+    a {
+        top: 50%;
+        position: absolute;
+    }
+}
+
+.gift-add a {
+    left: 20%;
+}
+
+.gift-reject a {
+    right: 20%;
+}
+
+.shortlist-choice {
+  justify-content: center;
+}
