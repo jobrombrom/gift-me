@@ -6,15 +6,25 @@ class SessionGiftsController < ApplicationController
 
     respond_to do |format|
       if @added == 'false'
-        format.html { redirect_to shortlist_gifts_path(@shortlist) }
         format.js
       elsif @session_gift.save
-        format.html { redirect_to shortlist_gifts_path(@shortlist) }
         format.js
       else
         format.html { redirect_to shortlist_new_path }
       end
     end
+  end
+
+  def destroy
+    @session_gift = SessionGift.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
+    @session_gift.destroy!
+  end
+
+  def show
+    @session_gift = SessionGift.find(params[:id])
   end
 
   private

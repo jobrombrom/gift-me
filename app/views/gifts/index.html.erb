@@ -53,8 +53,8 @@
   <div class="mt-3 pt-3 shortlist-choice row row-center">
     <a class="btn btn-info" id= "gifts-button">Keep Looking <i class="fas fa-search"></i></a>
   </div>
-  <% @shortlist.gifts.each do |gift| %>
-    <%= render 'components/card_horizontal', gift: gift %>
+  <% @shortlist.session_gifts.each do |gift| %>
+    <%= render 'components/card_horizontal', session_gift: gift %>
   <% end %>
 </div>
 

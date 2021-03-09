@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   #   resources :session_gifts, only: :create
   # end
 
+  resources :session_gifts, only: [:destroy, :show]
   resources :shortlists, only: [:show, :create, :destroy] do
     resources :gifts, only: [:index]
-    resources :session_gifts, only: :create
+    resources :session_gifts, only: [:create]
   end
 
   root to: 'shortlists#new'
