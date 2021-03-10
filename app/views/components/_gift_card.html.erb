@@ -1,0 +1,17 @@
+<div class="gift-row" id="gift-<%= gift.id %>" >
+  <%= link_to "Reject",
+        shortlist_session_gifts_path(@shortlist, gift_id: gift.id , added: 'false'), method: :post, remote: true, class: "btn btn-danger gift-selector gift-selector-reject" %>
+  <div class="gift">
+    <div class="gift-card">
+      <img class="gift-img gift-img-top" src=<%= gift.image %>>
+      <div class="gift-details">
+        <h5 class="gift-title text-truncate"><%= gift.title %></h5>
+        <p class="gift-price">£<%= gift.price %></p>
+      </div>
+    </div>
+  </div>
+  <%= link_to "Add",
+          shortlist_session_gifts_path(@shortlist, gift_id: gift.id , added: 'true'), method: :post, remote: true, class: "btn btn-success gift-selector gift-selector-accept"  %>
+</div>
+
+<!--<% 'hidden' if first == 'false' %> -->
