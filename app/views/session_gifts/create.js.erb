@@ -1,13 +1,27 @@
 hideElement = document.getElementById("gift-<%= @session_gift.gift.id %>");
-hideElement.hidden = true;
-showElement = hideElement.nextElementSibling
-showElement.hidden = false;
+// hideElement.classList.add('gift-hidden')
+// hideElement.classList.remove('gift-show')
+rejectSelector = hideElement.querySelector('.gift-selector-reject')
+rejectSelector.classList.add('gift-selector-hidden')
+acceptSelector = hideElement.querySelector('.gift-selector-accept')
+acceptSelector.classList.add('gift-selector-hidden')
 
 shortlist = document.querySelector("#shortlisted-gifts")
+giftCard = hideElement.querySelector('.gift')
 
 "<% if @added == 'true' %> "
   newSG = document.createElement("div");
   newSG.innerHTML = "<%= escape_javascript render 'components/card_horizontal', session_gift: @session_gift %>";
   shortlist.append(newSG);
+
+  giftCard.classList.add('gift-hidden-accept')
+"<% else %>"
+  giftCard.classList.add('gift-hidden-reject')
 "<% end %>"
+
+setTimeout(function(){ hideElement.hidden = true; }, 300);
+
+
+// showElement = hideElement.nextElementSibling
+// showElement.hidden = false;
 

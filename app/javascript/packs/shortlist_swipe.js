@@ -1,7 +1,7 @@
 let shortlistButton = document.querySelector('#shortlist-button');
 let giftsButton = document.querySelector('#gifts-button');
 let shortlist = document.querySelector('#shortlisted-gifts');
-let gifts  = document.querySelector('#gifts-listing');
+let gifts  = document.querySelector('#main-view');
 
 showShortlist = (event) => {
   shortlist.hidden = false;

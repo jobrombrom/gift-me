@@ -1,0 +1,31 @@
+.gift-display {
+  height: 620px;
+  margin: auto;
+  position: relative;
+}
+
+#main-view {
+  height:900px;
+  background-image: url("https://wallpaperaccess.com/full/666718.jpg");
+  background-size: cover;
+}
+
+#scissors {
+  position:absolute;
+  width: 20%;
+  height: auto;
+  top: 20%;
+  left: 5%;
+  opacity: 0.85;
+}
+
+#ribbon {
+  position:absolute;
+  width: 25%;
+  height: auto;
+  top: 30%;
+  left: 75%;
+  transform: rotate(45deg);
+  opacity: 0.85;
+}
+

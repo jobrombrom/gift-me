@@ -1,0 +1,96 @@
+.gift-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 564px;
+}
+
+.gift-selector {
+  margin: 24px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gift {
+  width: 524px;
+  height: 100%;
+}
+
+.gift-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 48px;
+  // box-shadow: 0 10px 10px rgba(0,0,0,.2);
+  background-color: #FFFFFF;
+}
+
+.gift-img {
+  object-fit: cover;
+  padding: 32px;
+  width: 100%;
+  height: 65%;
+}
+
+.gift-details {
+  height: 35%;
+  width: 100%;
+  background-color: #F5F5F5;
+  border-radius: 0 0 48px 48px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gift-title, .gift-price {
+  font-weight: bolder;
+  font-size: 24px;
+  margin: 0 16px;
+  padding: 24px;
+}
+
+.gift-details p {
+  margin-bottom: 0;
+}
+
+
+//Animations and state changes on accept / reject
+
+.gift-selector-hidden {
+  display:none;
+}
+
+.gift-show {
+  opacity: 1;
+}
+
+@keyframes reject {
+  from {}
+  to {height:0px; width:0px; opacity:0; transform: translate(-550px, -100px); color:white;}
+}
+
+@keyframes accept {
+  from {}
+  to {height:0px; width:0px; opacity:0; transform: translate(0px, 400px); color:white;}
+}
+
+
+.gift-hidden-accept {
+  animation-name: accept;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+.gift-hidden-reject {
+  animation-name: reject;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
