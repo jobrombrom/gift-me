@@ -1,0 +1,21 @@
+// socials
+.fab {
+    &:hover {
+        color: $blue;
+    }
+}
+
+// user icon
+.fas {
+    color: black;
+    &:hover {
+        color: $blue;
+    }
+}
+
+// dropdown list
+.fas a {
+    &:hover {
+        color: $blue;
+    }
+}
