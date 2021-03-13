@@ -1,5 +1,5 @@
 meta_product_name: "Gift.me"
 meta_title: "Gift.me - find the perfect gift!"
 meta_description: "Find the perfect gift for your friends and family and for any occasion. It's just one click away!"
-meta_image: "group12.png" # should exist in `app/assets/images/`
+meta_image: "meta-img.jpg" # should exist in `app/assets/images/`
 twitter_account: "@gift.me"   # required for Twitter Cards
