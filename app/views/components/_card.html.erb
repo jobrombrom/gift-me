@@ -1,10 +1,12 @@
 <div class="d-flex justify-content-center">
-  <div class="card">
-    <img class="card-img card-img-top" src=<%= gift.image %> alt="image of <%= gift.title %>" width="240px">
-    <div class="card-body">
-        <h5 class="card-title text-truncate"><%= gift.title %></h5>
-        <p class="card-text text-truncate"><%= gift.description %></p>
-        <p class="card-price">£<%= gift.price %></p>
+    <div class="card">
+        <div class="card-bow"><%= image_tag "bow.png", style: "width: 300px" %></div>
+        <img class="card-img card-img-top" src=<%= gift.image %> alt= <%= gift.title %>>
+        <div class="card-body">
+            <h5 class="card-title text-truncate"><%= gift.title %></h5>
+            <p class="card-text text-truncate"><%= gift.description %></p>
+            <p class="card-price">£<%= gift.price %></p>
+        </div>
+        <button><%= link_to 'Get your gift now', gift.link, class: "link-text" %></button>
     </div>
-  </div>
 </div>

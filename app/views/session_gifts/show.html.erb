@@ -1,6 +1,12 @@
+<body style="background-image: url('./assets/images/Background_homepage.jpg')">
+
 <div class="container">
-  <h1 class="text-center">CONGRATS YOU BLOODY DID IT</h1>
+  <div class="text-center card-horizontal-title">
+    <h1>Congratulations!</h1>
+    <h2>You bloody did it</h2>
+  </div>
   <%= render 'components/card', gift: @session_gift.gift %>
 </div>
 
 <%= javascript_pack_tag 'confetti.js' %>
+</body>

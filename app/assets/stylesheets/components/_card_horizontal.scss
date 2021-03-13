@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap');
+
 .card-horizontal {
   display: flex;
   height: 240px;
+  width: 100%;
 }
 
 .card-img-left {
@@ -12,3 +15,19 @@
   width: 100%;
   overflow: hidden;
 }
+
+.card-horizontal-title {
+  margin-top: 3vw;
+  margin-bottom: 1vw;
+
+  h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 50px;
+    color: #A1CAF1;
+  }
+
+  h2 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
