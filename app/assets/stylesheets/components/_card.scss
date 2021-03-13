@@ -11,6 +11,7 @@
 }
 
 .card {
+  background-image: url('https://img.freepik.com/free-photo/cardboard-sheet-paper-abstract-texture-background_7182-2105.jpg?size=626&ext=jpg');
   display: flex;
   width: 100%;
   padding: 8px;
@@ -20,6 +21,7 @@
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
   position: relative;
   font-family: 'Poppins', sans-serif;
+  color: #6C757D;
 
   .card-bow {
     top: -75px;
@@ -43,7 +45,7 @@
     width: 50%;
     border-radius: 30px;
     font-size: 30px;
-    background-color: #E84855;
+    background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
     border: none;
     box-shadow: 0 5px 5px rgba(0,0,0,.3);
   }
@@ -53,6 +55,6 @@
   color: white;
 
   &:hover {
-    color: snow;
+    color: white;
   }
 }
