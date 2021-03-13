@@ -1,0 +1,33 @@
+.button-accept {
+  color: #50dab7;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 100px;
+  margin: 35px 35px;
+  text-shadow: 2px 2px 2px #b9b8b8d5;
+  cursor: pointer;
+}
+
+.button-accept:hover {
+  color: #04dda7;
+  text-decoration: none;
+}
+
+.button-reject {
+    color: #faa9a9;
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 100px;
+    margin: 50px 50px;
+    text-shadow: 2px 2px 2px #b9b8b8e0;
+    cursor: pointer;
+}
+  
+.button-reject:hover {
+    color: #f58080;
+    text-decoration: none;
+    background-color: white;
+}
