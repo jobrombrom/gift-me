@@ -16,8 +16,10 @@
   </div>
 
 
-  <img src="https://i0.wp.com/freepngimages.com/wp-content/uploads/2019/06/open-scissors.png?fit=1000%2C1000" id="scissors">
-  <img id = "ribbon" src="https://lh3.googleusercontent.com/proxy/MTss0ElhOmht-4nIE2_OQWsxraISUbYARxv-JdD02lXkxlqJyIygT_Eqp8W9gZToDBUuTxTpLDjLjVbqJRRe9JxlPLY8nm3QaOkW1JaxJ6bwta6KA4rzzJuY8usM8TjNhkN-_ek" alt="">
+  <img src="https://www.pngkey.com/png/full/57-570526_scissors-png-images-clipart-scissors.png" id="scissors">
+
+  <img id = "ribbon" src=<%= image_url('Wrapping_paper.png') %>>
+  <img id = "giftbox1" src=<%= image_url('Gift_1.png') %>>
 
 
 
@@ -25,7 +27,7 @@
     <div class="mt-3 pt-3 shortlist-choice row row-center">
       <a class="btn btn-info" id= "gifts-button">Keep Looking <i class="fas fa-search"></i></a>
     </div>
-    <div id = "shortlisted-gifts">
+    <div id = "shortlisted-gifts" class='shortlist-show'>
       <% @shortlist.session_gifts.each do |session_gift| %>
         <div> <%= render 'components/shortlist_card', session_gift: session_gift %></div>
       <% end %>

@@ -5,12 +5,14 @@ let gifts  = document.querySelector('#gift-main-display');
 
 showShortlist = (event) => {
   shortlist.hidden = false;
+  shortlist.classList.add('shortlist-show');
   gifts.hidden = true;
 }
 
 showGifts = (event) => {
   shortlist.hidden = true;
   gifts.hidden = false;
+  gifts.classList.add('gifts-show')
 }
 
 shortlistButton.addEventListener('click', showShortlist)

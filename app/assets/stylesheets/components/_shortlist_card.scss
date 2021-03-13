@@ -3,10 +3,11 @@
   height: 144px;
   width: 576px;
   background: #F4F4F4;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
   display: flex;
   align-items: center;
   position: relative;
+  border-radius: 20px;
 }
 
 .shortlist-card img {
@@ -67,11 +68,22 @@
   border-radius: 50%;
   margin: 8px;
   top: 0;
+  opacity: 0;
 }
 
 
 .shortlist-trash-btn i {
   font-size: 18px;
   color: #EE6B76;
-
 }
+
+.shortlist-card:hover {
+  opacity: 1;
+  border: 8px double rgba(255,226,226,0.9);
+}
+
+.shortlist-card:hover .shortlist-trash-btn {
+  opacity: 1;
+}
+
+
