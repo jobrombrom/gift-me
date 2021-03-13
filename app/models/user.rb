@@ -5,6 +5,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :shortlists
   validates :email, presence: true
-  # can't really add below due to seed file formatting not really a big deal
-  # , uniqueness: true 
 end

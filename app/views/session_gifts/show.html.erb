@@ -1,2 +1,11 @@
-<h1>CONGRATS YOU BLOODY DID IT</h1>
-<%= render 'components/card', gift: @session_gift.gift %>
+<body style="background-image: url('https://wallpaperaccess.com/full/666718.jpg')">
+
+<div class="container">
+  <div class="text-center card-horizontal-title">
+    <h1>Congratulations!</h1>
+  </div>
+  <%= render 'components/card', gift: @session_gift.gift %>
+</div>
+
+<%= javascript_pack_tag 'confetti.js' %>
+</body>
