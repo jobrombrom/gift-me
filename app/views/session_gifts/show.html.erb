@@ -1,2 +1,6 @@
-<h1>CONGRATS YOU BLOODY DID IT</h1>
-<%= render 'components/card', gift: @session_gift.gift %>
+<div class="container">
+  <h1 class="text-center">CONGRATS YOU BLOODY DID IT</h1>
+  <%= render 'components/card', gift: @session_gift.gift %>
+</div>
+
+<%= javascript_pack_tag 'confetti.js' %>
