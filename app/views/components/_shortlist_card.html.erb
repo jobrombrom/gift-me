@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-center mt-3">
+<div class="shortlist-card" id="shortlist-gift-<%= session_gift.id %>">
+  <%= link_to raw('<i class="fas fa-trash-alt"></i>'), session_gift_path(session_gift), method: :delete, remote: true, class: "shortlist-trash-btn" %>
+<!--   <a class="shortlist-trash-btn"><i class="fas fa-trash-alt"></i></a> -->
+  <img src=<%= session_gift.gift.image %> />
+  <div class="shortlist-card-infos">
+    <h2><%= session_gift.gift.title %></h2>
+    <p><%= session_gift.gift.price %></p>
+  </div>
+
+  <%= link_to raw('<i class="fas fa-gift"></i>'), session_gift_path(session_gift), class: "gift-btn" %>
+</div>
+</div>
