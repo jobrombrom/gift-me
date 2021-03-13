@@ -1,39 +1,13 @@
-<style>
-body {background-color: #FFE2E2;}
-</style>
-
+<%# <%= javascript_pack_tag 'remove_logo' %> 
 <div class="container">
-  <div class="text-center">
-    <%= image_tag 'logo.png' %>
+  <div class="welcome">
+    <div class="flex-1">
+      <%= image_tag 'logo.png', class: "home-logo" %>
+    </div>
+    <div class="flex-2">
+      <%= render 'components/home_form' %>
+    </div>
   </div>
-  <p>Who are you gifting today?</p>
+</div>  
 
-</div>
-
- <div class="container">
-  <%= simple_form_for [@shortlist] do |f|%>
-    <%= f.input :recipient_name %>
-    <%= f.input :interest, as: :check_boxes, collection: [
-    "Pet Supplies",
-    "Clothing",
-    "Home & Living",
-    "Jewelry",
-    "Art & Collectibles",
-    "Bags & Purses",
-    "Craft Supplies & Tools",
-    "Electronics & Accessories",
-    "Accessories",
-    "Books, Movies & Music",
-    "Weddings",
-    "Shoes",
-    "Toys & Games",
-    "Bath & Beauty",
-    "Paper & Party Supplies"
-    ] %>
-    <%= f.submit %>
-  <% end %>
-</div>
-
-<div class="">
-  <%= image_tag("Background_homepage.jpg", width: '100%')%>
-</div>
+<%= render 'components/socials' %>

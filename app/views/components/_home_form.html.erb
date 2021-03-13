@@ -1,0 +1,16 @@
+<div class="container home-form">
+  <h3>Ready to step up your gift game?</h3>
+  <%= simple_form_for [@shortlist] do |f| %>
+    <%= f.input :recipient_name, 
+          label: "Who are you gifting 🎁?", 
+          placeholder: 'Marco' %>
+    <%= f.input :interest, 
+          as: :check_boxes, 
+          # put below in Shorlist model
+          collection: Shortlist::CATEGORIES, 
+          label: "What do they ❤️?", 
+          input_html: { class: "tag-selector" },
+          item_wrapper_class: 'tag-item' %>
+    <%= f.button :submit, "Get swiping", class: "btn-primary", width: "100%" %>
+  <% end %>
+</div>
