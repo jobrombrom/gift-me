@@ -11,7 +11,7 @@ giftCard = hideElement.querySelector('.gift')
 
 "<% if @added == 'true' %> "
   newSG = document.createElement("div");
-  newSG.innerHTML = "<%= escape_javascript render 'components/card_horizontal', session_gift: @session_gift %>";
+  newSG.innerHTML = "<%= escape_javascript render 'components/shortlist_card', session_gift: @session_gift %>";
   shortlist.append(newSG);
 
   giftCard.classList.add('gift-hidden-accept')

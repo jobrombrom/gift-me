@@ -1,0 +1,27 @@
+.carousel-card {
+    margin: 3rem auto;
+    width: 80%;
+    img {
+        width: 50px;
+        border-radius: 50%;
+    }
+    .card-body {
+        padding: 1.5rem;
+    }
+}
+
+.home-carousel {
+    color: $gray;
+    font-weight: bold;
+}
+
+
+.carousel-item {
+    h5 {
+        font-weight: bolder;
+        size: 24px;
+    }
+    p {
+        size: 1.2rem;
+    }
+}

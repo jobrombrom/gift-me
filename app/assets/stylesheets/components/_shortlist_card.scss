@@ -1,0 +1,77 @@
+.shortlist-card {
+  overflow: hidden;
+  height: 144px;
+  width: 576px;
+  background: #F4F4F4;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.shortlist-card img {
+  height: 100%;
+  width: 144px;
+  object-fit: cover;
+}
+
+.shortlist-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.shortlist-card p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.shortlist-card .shortlist-card-infos {
+  padding: 16px;
+  width: 336px;
+}
+
+.gift-btn{
+  width:64px;
+  height: 64px;
+  // border-radius: 50%;
+  border: 5px solid $green;
+  cursor: pointer;
+  line-height: 64px;
+  text-align: center;
+  vertical-align: center;
+  border-radius: 50%;
+  margin: 16px;
+}
+
+
+.gift-btn i {
+  font-size: 24px;
+  color: $green;
+}
+
+.shortlist-trash-btn {
+  position: absolute;
+  width:32px;
+  height: 32px;
+  // border-radius: 50%;
+  border: 3px solid #EE6B76;
+  background: #F4F4F4;
+  cursor: pointer;
+  line-height: 32px;
+  text-align: center;
+  vertical-align: center;
+  border-radius: 50%;
+  margin: 8px;
+  top: 0;
+}
+
+
+.shortlist-trash-btn i {
+  font-size: 18px;
+  color: #EE6B76;
+
+}

@@ -1,0 +1,91 @@
+.new_shortlist {
+    .form-group {
+        padding: 10px;
+    }
+}
+
+.tag-item {
+    display: inline-block;
+}
+  
+// gets rid of checkbox
+.tag-selector {
+    position: absolute;
+    transform: scale(0);
+}
+
+.tag-selector + label {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.0rem;
+    border-radius: 50rem;
+    padding: 0.1rem 0.5rem;
+    background-color: $green;
+    color: $white;
+    border: 1px solid $green;
+    margin-right: 0.6rem;
+    margin-bottom: 0.4rem;
+  }
+
+// selected colour changes
+.tag-selector:checked + label {
+    background-color: $blue;
+    font-weight:bold;
+}
+
+
+.home-form {
+    transition: 0.5s;
+    background-image: linear-gradient(to right, $light-blue 0%, $light-gray 51%, $light-blue 100%);   
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    border-radius: 1rem;
+    background-color: $blue;
+    padding: 3rem;
+    label {
+        font-size: 1.2rem;
+    }
+    legend {
+        font-size: 1.2rem;
+    }
+    .form-questions {
+        font-size: 1.5rem;
+    }
+    h3 {
+        padding: 10px;
+        text-align: center;
+    }
+    .btn {
+        cursor: pointer;
+        color: white;
+        width: 100%;
+        padding: 15px;
+        font-size: 1.2rem;
+        border-radius: 50rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: 0.5s;
+        border: 4px;
+        border-color: $green;
+        background-size: 200% auto;
+        box-shadow: 0 0 20px #eee;
+        background-image: linear-gradient(to right, $blue 0%, $green 51%, $blue 100%);  
+    }
+}
+
+.home-form .btn {
+    &:hover {
+        background-position: right center;
+    }
+}
+
+.form-control {
+    color: $green;
+    border-radius: 50rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    background-color: $white;
+    &::placeholder {
+        color: $green;
+    }
+}
+
