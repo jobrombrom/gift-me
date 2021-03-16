@@ -1,0 +1,18 @@
+@keyframes slide {
+  from {transform: translate(0, 500px);}
+  to {transform: translate(0px, 0px);}
+}
+
+.shortlist-show {
+  animation-name: slide;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+#shortlisted-gifts {
+  width: 624px;
+  margin:auto;
+  max-height: 750px;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
