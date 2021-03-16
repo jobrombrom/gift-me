@@ -78,7 +78,9 @@
 }
 
 .shortlist-card:hover {
-  border: 4px solid #F4F4F4;
+  border-top: 4px solid #F4F4F4;
+  border-bottom: 4px solid #F4F4F4;
+  // border-left: 4px solid #F4F4F4;
 }
 
 .shortlist-card:hover .shortlist-trash-btn {
