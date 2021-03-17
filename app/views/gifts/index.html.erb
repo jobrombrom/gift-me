@@ -1,13 +1,15 @@
 <div id="main-view">
   <div id="gift-main-display">
     <div class="gift-display">
-      <% @gifts.each_with_index do |gift, index| %>
-        <% if index == 0 %>
-          <%= render 'components/gift_card', gift: gift, first: 'true' %>
-        <% else %>
-          <%= render 'components/gift_card', gift: gift, first: 'false' %>
+      <div class="gift-cards">
+        <% @gifts.each_with_index do |gift, index| %>
+          <% if index == 0 %>
+            <%= render 'components/gift_card', gift: gift, first: 'true' %>
+          <% else %>
+            <%= render 'components/gift_card', gift: gift, first: 'false' %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
 
     <div class="pt-3 shortlist-choice row row-center">
@@ -37,5 +39,5 @@
 </div>
 
 
-
+<%= javascript_pack_tag 'card_swipe.js' %>
 <%= javascript_pack_tag 'shortlist_swipe.js' %>

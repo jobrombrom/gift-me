@@ -2,6 +2,26 @@
   height: 620px;
   margin: auto;
   position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.loaded.gift-display {
+  opacity: 1;
+}
+
+.gift-cards {
+  flex-grow: 1;
+  padding-top: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1;
 }
 
 .shortlisted-gifts {
