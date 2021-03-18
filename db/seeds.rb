@@ -33,7 +33,7 @@ etsy_listings.each do |l|
   image_listings = image_api["results"]
   gift = Gift.create(
     title: l["title"].match(/[^([{],.\n\|\/]+/).to_s.titleize,
-    description: l["description"].match(/([^\n]+)/).to_s.gsub("&quot", "").gsub("&#39;", "").gsub("4&Quot;", "").gsub("X2&Quot;", "").capitalize,
+    description: l["description"].match(/([^\n]+)/).to_s.gsub("&quot", "").gsub("&#39;", "").gsub("4&Quot;", "").gsub("X2&Quot;", "").capitalize,
     link: l["url"],
     image: image_listings[0]["url_570xN"],
     price: l["price"],
