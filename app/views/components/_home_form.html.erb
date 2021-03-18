@@ -3,7 +3,7 @@
   <%= simple_form_for [@shortlist] do |f| %>
     <%= f.input :recipient_name, 
           label: "Who are you gifting 🎁?", 
-          placeholder: 'Marco' %>
+          placeholder: 'Your recipient name' %>
     <%= f.input :interest, 
           as: :check_boxes, 
           # put below in Shorlist model
