@@ -2,7 +2,8 @@
 
 .card-img {
   object-fit: cover;
-  border-radius: 30px;
+  width: 100%;
+  border-radius: 20px 20px 0px 0px;
 }
 
 .card-img-top {
@@ -11,14 +12,13 @@
 }
 
 .card {
-  background-image: url('https://img.freepik.com/free-photo/cardboard-sheet-paper-abstract-texture-background_7182-2105.jpg?size=626&ext=jpg');
+  background-color: #FFFFFF;
   display: flex;
   width: 100%;
-  padding: 8px;
   margin: 8px;
   padding-bottom: 20px;
   border-radius: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
   position: relative;
   font-family: 'Poppins', sans-serif;
   color: #6C757D;
@@ -45,7 +45,7 @@
     width: 50%;
     border-radius: 30px;
     font-size: 30px;
-    background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
+    background-color: #99DDCC;
     border: none;
     box-shadow: 0 5px 5px rgba(0,0,0,.3);
   }

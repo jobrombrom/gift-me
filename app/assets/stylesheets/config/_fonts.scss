@@ -1,9 +1,11 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@300&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 // Define fonts for body and headers
-$body-font: 'Encode Sans', sans-serif, "Helvetica", "sans-serif";
-$headers-font: 'Open Sans', sans-serif, "Helvetica", "sans-serif";
+$body-font: "Raleway", sans-serif, "Helvetica", "sans-serif";
+$headers-font: "Pacifico", cursive, "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
