@@ -5,6 +5,7 @@ body {
     color: gray;
     background-image: url(Background_homepage.jpg);
     background-size: cover;
+    position: relative;
 }
 
 .welcome {
@@ -29,6 +30,10 @@ body {
         display: block;
         margin: auto auto;
     }
+}
+
+.footer {
+    bottom: 0px;
 }
 
 
