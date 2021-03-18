@@ -1,7 +1,6 @@
 class ShortlistsController < ApplicationController
 
   def new
-    @gift_categories = Gift.find_by_sql("SELECT main_category FROM gifts GROUP BY main_category;")
     @shortlist = Shortlist.new
   end
 
@@ -11,7 +10,7 @@ class ShortlistsController < ApplicationController
     if @shortlist.save
       redirect_to shortlist_gifts_path(@shortlist)
     else
-      render :new
+      redirect_to root_path, notice: "Name can't be blank"
     end
   end
 
