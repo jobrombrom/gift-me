@@ -1,3 +1,5 @@
+<body style="background-image: url('https://wallpaperaccess.com/full/666718.jpg')">
+
 <div id="main-view">
   <div id="gift-main-display">
     <div class="gift-display">
@@ -21,13 +23,11 @@
   <img id = "ribbon" src=<%= image_url('Wrapping_paper.png') %>>
   <img id = "giftbox1" src=<%= image_url('Gift_1.png') %>>
 
-
-
-  <div id="shortlist-display" class = "container list-container" hidden>
+  <div id="shortlist-display" class= "container list-container" hidden>
     <div class="mt-3 pt-3 shortlist-choice row row-center">
       <a class="btn btn-info" id= "gifts-button">Keep Looking <i class="fas fa-search"></i></a>
     </div>
-    <div id = "shortlisted-gifts" class='shortlist-show'>
+    <div id="shortlisted-gifts" class="shortlist-show mb-3">
       <% @shortlist.session_gifts.each do |session_gift| %>
         <div> <%= render 'components/shortlist_card', session_gift: session_gift %></div>
       <% end %>
@@ -39,3 +39,4 @@
 
 
 <%= javascript_pack_tag 'shortlist_swipe.js' %>
+</body>

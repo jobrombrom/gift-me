@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 .shortlist-card {
   overflow: hidden;
   height: 144px;
   width: 576px;
-  background: #F4F4F4;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  background: #FFFFFF;
   box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
   display: flex;
   align-items: center;
@@ -16,14 +20,16 @@
   object-fit: cover;
 }
 
-.shortlist-card h2 {
+.shortlist-card .header {
   font-size: 16px;
   font-weight: bold;
+  color: #1D2951;
   margin: 0;
 }
 
 .shortlist-card p {
   font-size: 12px;
+  color: #1D2951;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -31,6 +37,7 @@
 }
 
 .shortlist-card .shortlist-card-infos {
+  font-family: 'Raleway', sans-serif;
   padding: 16px;
   width: 336px;
 }
