@@ -1,6 +1,6 @@
 <div class="gift-row" id="gift-<%= gift.id %>" >
   <%= link_to " ",
-        shortlist_session_gifts_path(@shortlist, gift_id: gift.id , added: 'false'), method: :post, remote: true, class: "fas fa-times-circle button-reject gift-selector gift-selector-reject nope" %>
+        shortlist_session_gifts_path(@shortlist, gift_id: gift.id , added: 'false'), method: :post, remote: true, class: "fas fa-times button-reject gift-selector gift-selector-reject nope" %>
   <div class="gift">
     <div class="gift-card">
       <img class="gift-img gift-img-top" src=<%= gift.image %>>

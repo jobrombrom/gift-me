@@ -1,31 +1,44 @@
 .button-accept {
-  color: #50dab7;
+  display:block;
+  width:90px;
+  height:90px;
+  line-height:100px;
+  color: #99DDCC;
+  background-color: #F4F4F4;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 100px;
-  margin: 35px 35px;
-  text-shadow: 2px 2px 2px #b9b8b8d5;
+  font-size: 70px;
+  margin: 20px 20px;
+  border-radius: 50%;
+  box-shadow: #bdbdbdd5 0px 2px 2px;
   cursor: pointer;
 }
 
 .button-accept:hover {
-  color: #04dda7;
+  color: #45D8B3;
   text-decoration: none;
 }
 
 .button-reject {
-  color: #faa9a9;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 100px;
-  margin: 50px 50px;
-  text-shadow: 2px 2px 2px #b9b8b8e0;
-  cursor: pointer;
+    display:block;
+    width:90px;
+    height:90px;
+    line-height:90px;
+    color: #F59FA6;
+    background-color: #F4F4F4;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 80px;
+    margin: 20px 20px;
+    border-radius: 50%;
+    box-shadow: #bdbdbdd5 0px 2px 2px;
+    cursor: pointer;
 }
   
 .button-reject:hover {
-  color: #f58080;
-  text-decoration: none;
+    color: #F98992;
+    text-decoration: none;
+    background-color: #F4F4F4;
 }
