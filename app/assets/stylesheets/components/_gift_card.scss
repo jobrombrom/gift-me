@@ -10,16 +10,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
   height: 564px;
+  padding-top: 40px;
 }
 
-.gift-selector {
-  margin: 24px;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .gift {
   width: 524px;
@@ -32,6 +25,15 @@
   border-radius: 48px;
   box-shadow: 5px 5px 10px rgba(0,0,0,0.05);
   background-color: #FFFFFF;
+  display: inline-block;
+  // width: 90vw;
+  // max-width: 400px;
+  // height: 70vh;
+  // padding-bottom: 40px;
+  overflow: hidden;
+  // position: absolute;
+  will-change: transform;
+  transition: all 0.3s ease-in-out;
 }
 
 .gift-img {
@@ -100,25 +102,25 @@
   opacity: 1;
 }
 
-@keyframes reject {
-  from {}
-  to {height:0px; width:0px; opacity:0; transform: translate(-550px, -100px); color:white;}
-}
+// @keyframes reject {
+//   from {}
+//   to {height:0px; width:0px; opacity:0; transform: translate(-550px, -100px); color:white;}
+// }
 
-@keyframes accept {
-  from {}
-  to {height:0px; width:0px; opacity:0; transform: translate(0px, 400px); color:white;}
-}
+// @keyframes accept {
+//   from {}
+//   to {height:0px; width:0px; opacity:0; transform: translate(0px, 400px); color:white;}
+// }
 
 
-.gift-hidden-accept {
-  animation-name: accept;
-  animation-duration: 0.7s;
-  animation-fill-mode: forwards;
-}
+// .gift-hidden-accept {
+//   animation-name: accept;
+//   animation-duration: 0.7s;
+//   animation-fill-mode: forwards;
+// }
 
-.gift-hidden-reject {
-  animation-name: reject;
-  animation-duration: 0.7s;
-  animation-fill-mode: forwards;
-}
+// .gift-hidden-reject {
+//   animation-name: reject;
+//   animation-duration: 0.7s;
+//   animation-fill-mode: forwards;
+// }
