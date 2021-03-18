@@ -1,5 +1,7 @@
 console.log("hello from confetti.js");
 
+
+
 var confetti = {
   maxCount: 150,    //set max confetti count
   speed: 2,     //set the particle animation speed
@@ -17,7 +19,7 @@ var confetti = {
   isRunning: null   //call and returns true or false depending on whether the animation is running
 };
 
-document.addEventListener("DOMContentLoaded", function() {
+const confettiFunction = function() {
   confetti.start = startConfetti;
   confetti.stop = stopConfetti;
   confetti.toggle = toggleConfetti;
@@ -213,4 +215,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
   startConfetti(3000);
-});
+};
+
+confettiFunction();
