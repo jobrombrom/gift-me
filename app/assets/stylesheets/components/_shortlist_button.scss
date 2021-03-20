@@ -30,7 +30,7 @@
     width:140px;
     height:40px;
     color: #FFFFFF;
-    background-image: url("shortlist_button.png");
+    background-image: image-url("shortlist_button.png");
     background-size: 100% 100%;
     text-align: center;
     line-height: 40px;
@@ -42,12 +42,17 @@
     // border-radius: 16px;
   }
 
+.keep-looking {
+  font-size: 20px;
+  width: 150px;
+}
+
   .button_shortlist:hover {
     opacity: 1;
     text-transform: bolder;
     color: #FFFFFF;
     text-decoration: none;
-    background-image: url("shortlist_button.png");
+    background-image: image-url("shortlist_button.png");
   }
 
 @keyframes shake {
