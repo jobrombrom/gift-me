@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # end
 
   resources :session_gifts, only: [:destroy, :show]
-  resources :shortlists, only: [:show, :create, :destroy, :index] do
+  resources :shortlists, only: [:show, :create, :destroy, :index, :edit, :update ] do
     resources :gifts, only: [:index]
     resources :session_gifts, only: [:create]
   end
