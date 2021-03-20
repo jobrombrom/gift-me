@@ -12,7 +12,10 @@ class ShortlistsController < ApplicationController
     if @shortlist.save
       redirect_to shortlist_gifts_path(@shortlist)
     else
-      redirect_to root_path, notice: "Name can't be blank"
+      if @shortlist.errors.full_messages.length > 0
+        flash[:alert] = @shortlist.errors.full_messages.join(". ")
+      end
+      redirect_to root_path
     end
   end
 
