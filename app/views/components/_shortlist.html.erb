@@ -1,0 +1,11 @@
+<div class="shortlist-recipient-card">
+  <div class="shortlist-recipient-card-info">
+      <h2><%= shortlist.recipient_name %></h2>
+        <% interests = shortlist.interest.split('"') %>
+        <% interests.select! { |i| i =~ /[A-Z]/ } %>
+        <% interests.each do |interest| %>
+        <p class="category-pills"><%= interest %></p>
+        <% end %>
+    </div>
+    <div><%= link_to '🗑️', shortlist_path(shortlist), method: :delete %></div>
+</div>
