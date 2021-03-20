@@ -17,6 +17,7 @@ class SessionGiftsController < ApplicationController
 
   def destroy
     @session_gift = SessionGift.find(params[:id])
+    @shortlist = @session_gift.shortlist
     respond_to do |format|
       format.js
     end
