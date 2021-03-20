@@ -14,7 +14,14 @@ class ShortlistsController < ApplicationController
     end
   end
 
+  def index
+    @shortlist = Shortlist.all
+  end
+
   def destroy
+    @shortlist = Shortlist.find(params[:id])
+    @shortlist.destroy
+    redirect_to shortlists_path
   end
 
   def show
