@@ -45,13 +45,12 @@ initCards();
 var love_messages = [
   "Good choice! 👍",
   "That was 🔥", 
-  "Love that ❤️", 
-  "Remember to check out your wishlist 👇",, 
+  "❤️❤️❤️", 
   "Keep it 💯", 
   "👌👌👌",
   "Slayyyy 🗡️", 
   "Bossing it 🏆", 
-  "You're nailing this 🥰"
+  "You've got this 🙌"
 ]
 
 var nope_messages = [
@@ -61,8 +60,9 @@ var nope_messages = [
   "Remember to check out your wishlist 👇", 
   "Let's ignore that one 🙈", 
   "The search continues... 🔍", 
-  "🙃", 
-  "Don't know how that one got in there! 🙄"
+  // "🙃", 
+  "Don't know how that one got in there! 🙄", 
+  "No way 🙅‍♂️"
 ]
 
 
