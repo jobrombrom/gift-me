@@ -17,7 +17,10 @@
     </div>
 
     <div class="pt-3 shortlist-choice row row-center">
-      <a class="button_shortlist" id= "shortlist-button">Wishlist</a>
+      <div id = "shortlist-button-container" class=<%= "shortlist-btn-hide" if @shortlist.gifts.length == 0%>>
+        <a class="button_shortlist" id= "shortlist-button">Wishlist</a>
+        <a id = "shortlist-counter"><%= @shortlist.gifts.length %></a>
+      </div>
     </div>
   </div>
 

@@ -1,6 +1,6 @@
 class Shortlist < ApplicationRecord
   belongs_to :user
-  has_many :session_gifts
+  has_many :session_gifts, dependent: :destroy
   has_many :gifts, through: :session_gifts
   validates :recipient_name, presence: :true
 

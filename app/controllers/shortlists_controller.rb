@@ -1,4 +1,6 @@
 class ShortlistsController < ApplicationController
+  before_action :find_shortlist, only: [ :show, :destroy, :edit, :update ]
+
 
   def new
     @shortlist = Shortlist.new
@@ -14,14 +16,31 @@ class ShortlistsController < ApplicationController
     end
   end
 
+  def index
+    @shortlist = Shortlist.all
+  end
+
+  def edit
+  end
+
+  def update
+    @shortlist.update(shortlist_params)
+    redirect_to shortlist_gifts_path(@shortlist)
+  end
+
   def destroy
+    @shortlist.destroy
+    redirect_to shortlists_path
   end
 
   def show
-    @shortlist = Shortlist.find(params[:id])
   end
 
   private
+
+  def find_shortlist
+    @shortlist = Shortlist.find(params[:id])
+  end
 
   def shortlist_params
     params.require(:shortlist).permit(:recipient_name, interest: [])
