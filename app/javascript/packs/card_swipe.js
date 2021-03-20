@@ -7,28 +7,24 @@ var allCards = document.querySelectorAll('.gift-card');
 var allNopes = document.querySelectorAll('.nope');
 var allLoves = document.querySelectorAll('.love');
 
-// console.log(allNopes);
-// console.log(allLoves);
-
-
 function initCards(card, index) {
   var newCards = document.querySelectorAll('.gift-card:not(.removed)');
   newCards = Array.from(newCards).reverse();
 
 newCards.forEach(function (card, index) {
     // order of cards
- 
     card.style.zIndex = allCards.length - index;
     card.style.transform = 'scale(' + (20 - index) / 20 + ') translateY(-' + 30 * index + 'px)';
     card.style.opacity = (10 - index) / 10;
-    // card.style.zIndex = index
-
-    // let order = allCards.length - index - 1
-    // card.style.transform = 'scale(' + (20 - order) / 20 + ') translateY(-' + 30 * order + 'px)';    
-    // card.style.opacity = (10 - order) / 10;
   });
   
   giftContainer.classList.add('loaded');
+
+  if (newCards.length == 0) {
+    var message = document.getElementById("message")
+    message.innerHTML = "Time to look at our wishlist 👇"
+  }
+
 
   var card = newCards[0];
   var loveButton = card.closest('.gift-row').querySelector('.love')
@@ -43,24 +39,31 @@ newCards.forEach(function (card, index) {
   loveButton.addEventListener('click', loveListener);
 };
 
+// called when loading the page first time
 initCards();
 
-// function frontButton(nodeList) {
-//   // get front card
-//   // get parent class 
-//   // get button 
-    // initCards();
+var love_messages = [
+  "Good choice! 👍",
+  "That was 🔥", 
+  "Love that ❤️", 
+  "Remember to check out your wishlist 👇",, 
+  "Keep it 💯", 
+  "👌👌👌",
+  "Slayyyy 🗡️", 
+  "Bossing it 🏆", 
+  "You're nailing this 🥰"
+]
 
-// };
-
-// let frontNope = frontButton(allNopes);
-
-
-
-
-
-
-
+var nope_messages = [
+  "Oh well... Let's keep looking 💪", 
+  "Oh no 👎",
+  "😓😓😓", 
+  "Remember to check out your wishlist 👇", 
+  "Let's ignore that one 🙈", 
+  "The search continues... 🔍", 
+  "🙃", 
+  "Don't know how that one got in there! 🙄"
+]
 
 
 // only works for last one because uses get element by id and we have multiple buttons
@@ -69,7 +72,6 @@ function createButtonListener(love) {
   return function (event) {
     var cards = document.querySelectorAll('.gift-card:not(.removed)');
     cards = Array.from(cards).reverse()
-    console.log(cards)
     var moveOutWidth = document.body.clientWidth * 1.5;
 
     if (!cards.length) return false;
@@ -80,8 +82,13 @@ function createButtonListener(love) {
     // transition
     if (love) {
       card.style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)';
+      var message = document.getElementById("message")
+      message.innerHTML = love_messages[Math.floor(Math.random() * love_messages.length)]    
     } else {
       card.style.transform = 'translate(-' + moveOutWidth + 'px, -100px) rotate(30deg)';
+      var message = document.getElementById("message")
+      message.innerHTML = nope_messages[Math.floor(Math.random() * nope_messages.length)]      
+    
     }
 
     initCards();
@@ -89,13 +96,3 @@ function createButtonListener(love) {
     event.preventDefault();
   };
 }
-
-
-  
-
-
-
-
-
-// nope.addEventListener('click', console.log(nope));
-// love.addEventListener('click', console.log(love));

@@ -16,7 +16,7 @@
 
 .gift-cards {
   flex-grow: 1;
-  padding-top: 40px;
+  // padding-top: 40px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -79,3 +79,12 @@ body {
   animation-fill-mode: forwards;
 }
 
+#message { 
+  transition: 0.5s;
+  // background: -webkit-linear-gradient(#b8860b, #daa520, #b8860b);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  color: #b8860b;
+  line-height: 2;
+  margin-bottom: 0;
+}
