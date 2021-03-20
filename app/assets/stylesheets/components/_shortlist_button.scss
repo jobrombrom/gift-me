@@ -1,20 +1,85 @@
+.shortlist-choice {
+  justify-content: center;
+}
+
+#shortlist-button-container {
+  position: relative;
+}
+
+.shortlist-btn-hide {
+  opacity: 0;
+}
+
+#shortlist-counter {
+  position:absolute;
+  top: 0;
+  right:0;
+  background-color: $green;
+  width:32px;
+  height: 32px;
+  border-radius: 50%;
+  line-height: 32px;
+  font-size: 16px;
+  text-align: center;
+  color: #1D2951;
+}
+
+
 .button_shortlist {
     display:block;
-    width:150px;
+    width:140px;
     height:40px;
     color: #FFFFFF;
     background-image: url("shortlist_button.png");
-    background-size: 150px 40px;
+    background-size: 100% 100%;
     text-align: center;
     line-height: 40px;
     text-decoration: none;
     font-size: 20px;
     margin: 10px 5px;
     cursor: pointer;
+    // border-radius: 16px;
   }
-  
+
   .button_shortlist:hover {
     color: #FFFFFF;
     text-decoration: none;
     background-image: url("shortlist_button.png");
   }
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-0.5px, 0 , -0.5px);
+  }
+
+  20%, 80% {
+    transform: translate3d(0.5px, 2px, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-1px, 0, -0.5px);
+  }
+
+  40%, 60% {
+    transform: translate3d(1px, 2px, 0);
+  }
+}
+
+.shortlist-shake {
+  animation-name: shake;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes appear{
+  from {opacity: 0; transform: translate(0, 100px);}
+  to {opacity: 1;}
+}
+
+.shortlist-appear {
+  animation-name: appear;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+
