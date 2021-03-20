@@ -1,3 +1,7 @@
+.overflow {
+  overflow-y: scroll;
+}
+
 .shortlist-recipient-cards-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -7,8 +11,9 @@
 }
 
 .shortlist-recipient-card {
-  width: 300px;
-  height: 300px;
+  position: relative;
+  width: 275px;
+  height: 275px;
   background: #FFFFFF;
   box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
   border-radius: 20px;
@@ -26,4 +31,11 @@
   border: 2px solid #99DDCC;
   padding: 0px 1rem 0px 1rem;
   border-radius: 20px;
+}
+
+.delete-edit {
+  margin: auto;
+  position: absolute;
+  bottom: 1rem;
+  left: 40%;
 }

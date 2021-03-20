@@ -7,6 +7,8 @@
         <p class="category-pills"><%= interest %></p>
         <% end %>
     </div>
-    <div><%= link_to '🗑️', shortlist_path(shortlist), method: :delete %></div>
-    <div><%= link_to '✏️', edit_shortlist_path(shortlist) %></div>
+    <ul class="list-inline delete-edit">
+      <li class="list-inline-item"><%= link_to '🗑️', shortlist_path(shortlist), method: :delete %></li>
+      <li class="list-inline-item"><%= link_to '✏️', edit_shortlist_path(shortlist) %></li>
+    </ul>
 </div>
