@@ -41,6 +41,7 @@
   }
 
   button {
+    opacity: 0.9;
     text-decoration: none;
     margin: 0 auto;
     padding: 15px;
@@ -50,6 +51,12 @@
     background-color: #99DDCC;
     border: none;
     box-shadow: 0 5px 5px rgba(0,0,0,.3);
+  }
+}
+
+.card button {
+  &:hover {
+    opacity: 1;
   }
 }
 
