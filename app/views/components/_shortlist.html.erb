@@ -2,7 +2,7 @@
   <div class="shortlist-recipient-card">
     <div class="shortlist-recipient-card-info">
         <h2><%= shortlist.recipient_name %></h2>
-        <p>Created at: <%= shortlist.created_at %></p>
+        <p>Created on <%= shortlist.created_at.strftime("%A, %e %B %Y") %></p>
         <% shortlist.gifts.each do |gift | %>
         <img class="shortlist-image-gift" src=<%= gift.image %> alt= <%= gift.title %>>
         <% end %>
