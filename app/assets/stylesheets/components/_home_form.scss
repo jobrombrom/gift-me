@@ -20,17 +20,18 @@
     font-size: 1.0rem;
     border-radius: 50rem;
     padding: 0.1rem 0.5rem;
-    background-color: $blue;
+    background-color: $light-gray;
     color: $white;
-    border: 1px solid $blue;
+    border: 0.5px solid $blue;
     margin-right: 0.6rem;
     margin-bottom: 0.4rem;
   }
 
 // selected colour changes
 .tag-selector:checked + label {
-    background-color: $green;
+    background-color: $dark-blue;
     font-weight:bold;
+    color: $dark-blue;
 }
 
 
@@ -58,7 +59,7 @@
     }
     .btn {
         cursor: pointer;
-        color: white;
+        color: $dark-blue;
         width: 100%;
         padding: 15px;
         font-size: 1.2rem;
@@ -81,18 +82,18 @@
 }
 
 .form-control {
-    color: $green;
+    color: $dark-blue;
     border-radius: 50rem;
     font-size: 1.2rem;
     font-weight: bolder;
     background-color: $white;
     &::placeholder {
-        color: $blue;
+        color: $green;
     }
 }
 
 // for edit form 
 .form-check-label {
-    color: white !important;
+    color: $dark-blue !important;
 }
 
