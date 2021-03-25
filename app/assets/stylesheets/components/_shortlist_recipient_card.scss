@@ -1,25 +1,26 @@
-.overflow {
-  overflow-y: scroll;
-}
-
-.shortlist-recipient-cards-grid {
+.shortlist-recipient-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .shortlist-recipient-card {
-  flex: 0 1 30%;
+  flex: 0 1 auto;
   position: relative;
   background: #FFFFFF;
   box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
   border-radius: 20px;
   padding: 10px;
   margin: 10px;
+  overflow-y: scroll;
 
   h2 {
     text-align: center;
     color: #F59FA6;
+  }
+
+  p {
+    text-align: center;
   }
 }
 
@@ -32,11 +33,19 @@
 }
 
 .shortlist-image-gift {
-  width: 20%;
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
   border-radius: 5px;
 }
 
 .shortlist-delete-edit {
-  margin-top: 10%;
+  margin-top: 3%;
   text-align: center;
+}
+
+.link-style {
+  &:hover {
+    text-decoration: none;
+  }
 }
