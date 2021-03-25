@@ -20,9 +20,9 @@
     font-size: 1.0rem;
     border-radius: 50rem;
     padding: 0.1rem 0.5rem;
-    background-color: $green;
-    color: $white;
-    border: 1px solid $green;
+    background-color: $light-gray;
+    color: $dark-blue;
+    border: 0.5px solid $blue;
     margin-right: 0.6rem;
     margin-bottom: 0.4rem;
   }
@@ -31,6 +31,7 @@
 .tag-selector:checked + label {
     background-color: $blue;
     font-weight:bold;
+    color: $dark-blue !important;
 }
 
 
@@ -79,7 +80,7 @@
 }
 
 .form-control {
-    color: $green;
+    color: $dark-blue;
     border-radius: 50rem;
     font-size: 1.2rem;
     font-weight: bolder;
