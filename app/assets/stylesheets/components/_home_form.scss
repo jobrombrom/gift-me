@@ -7,7 +7,7 @@
 .tag-item {
     display: inline-block;
 }
-  
+
 // gets rid of checkbox
 .tag-selector {
     position: absolute;
@@ -20,23 +20,24 @@
     font-size: 1.0rem;
     border-radius: 50rem;
     padding: 0.1rem 0.5rem;
-    background-color: $green;
+    background-color: $blue;
     color: $white;
-    border: 1px solid $green;
+    border: 1px solid $blue;
     margin-right: 0.6rem;
     margin-bottom: 0.4rem;
   }
 
 // selected colour changes
 .tag-selector:checked + label {
-    background-color: $blue;
+    background-color: $green;
     font-weight:bold;
 }
 
 
 .home-form {
+    color: $dark-blue;
     transition: 0.5s;
-    background-image: linear-gradient(to right, $light-blue 0%, $light-gray 51%, $light-blue 100%);   
+    background-image: linear-gradient(to right, $light-gray 0%, $light-gray 51%, $light-gray 100%);
     box-shadow: 0 10px 30px rgba(0,0,0,.1);
     border-radius: 1rem;
     background-color: $blue;
@@ -51,6 +52,7 @@
         font-size: 1.5rem;
     }
     h3 {
+        color: $dark-blue;
         padding: 10px;
         text-align: center;
     }
@@ -64,11 +66,11 @@
         text-transform: uppercase;
         font-weight: bold;
         transition: 0.5s;
-        border: 4px;
-        border-color: $green;
         background-size: 200% auto;
         box-shadow: 0 0 20px #eee;
-        background-image: linear-gradient(to right, $blue 0%, $green 51%, $blue 100%);  
+        background-image: linear-gradient(to right, $green 0%, $green 51%, $green 100%);
+        background-size: cover;
+        border-color: $green;
     }
 }
 
@@ -85,7 +87,12 @@
     font-weight: bolder;
     background-color: $white;
     &::placeholder {
-        color: $green;
+        color: $blue;
     }
+}
+
+// for edit form 
+.form-check-label {
+    color: white !important;
 }
 

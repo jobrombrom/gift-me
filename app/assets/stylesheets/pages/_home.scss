@@ -1,11 +1,11 @@
 // Specific CSS for your home-page
 
 body {
-    background-color: $pink;
+    background-color: $light-gray;
     color: gray;
-    background-image: url(Background_homepage.jpg);
     background-size: cover;
     position: relative;
+    background-image: image-url('Background_homepage.jpg');
 }
 
 .welcome {
@@ -29,6 +29,8 @@ body {
         padding: 2rem;
         display: block;
         margin: auto auto;
+        width: 100%;
+        margin-right: 2rem;
     }
 }
 

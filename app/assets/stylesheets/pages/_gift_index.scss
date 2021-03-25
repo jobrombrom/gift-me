@@ -16,7 +16,7 @@
 
 .gift-cards {
   flex-grow: 1;
-  padding-top: 40px;
+  // padding-top: 40px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -41,8 +41,8 @@ body {
   height: auto;
   bottom: 15%;
   left: 7.5%;
-  opacity: 0.90;
-  transform: rotate(30deg);
+  opacity: 0.7;
+  // transform: rotate(20deg);
 }
 
 #giftbox1 {
@@ -52,7 +52,7 @@ body {
   bottom: 22%;
   right: 1%;
   transform: rotate(-5deg);
-  opacity: 0.95;
+  opacity: 0.75;
 }
 
 
@@ -65,7 +65,7 @@ body {
   top: 0;
   left: 9%;
   // transform: rotate(45deg);
-  opacity: 0.95;
+  opacity: 0.75;
 }
 
 @keyframes slidedown {
@@ -79,3 +79,12 @@ body {
   animation-fill-mode: forwards;
 }
 
+#message {
+  transition: 0.5s;
+  // background: -webkit-linear-gradient(#b8860b, #daa520, #b8860b);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  color: $gold;
+  line-height: 2;
+  margin-bottom: 0;
+}

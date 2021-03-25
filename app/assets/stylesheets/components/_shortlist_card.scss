@@ -82,11 +82,15 @@
 .shortlist-trash-btn i {
   font-size: 18px;
   color: #EE6B76;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .shortlist-card:hover {
-  border-top: 4px solid #F4F4F4;
-  border-bottom: 4px solid #F4F4F4;
+  border-top: 4px solid $light-gray;
+  border-bottom: 4px solid $light-gray;
   // border-left: 4px solid #F4F4F4;
 }
 

@@ -1,2 +1,25 @@
 hideElement = document.getElementById("shortlist-gift-<%= @session_gift.id %>");
 hideElement.hidden = true;
+shortlistCounter = document.querySelector("#shortlist-counter")
+shortlistCounter.innerText = "<%= @shortlist.gifts.length %>"
+
+//Shortlist counter and resizing:
+shortlistButton = document.querySelector('#shortlist-button')
+newWidth = "<%= 140 + 10 * [@shortlist.gifts.length, 10].min %>px";
+newHeight = "<%= 40 + 4 * [@shortlist.gifts.length, 10].min %>px";
+newFontSize = "<%= (40 + 4 * [@shortlist.gifts.length, 10].min)/2 %>px";
+shortlistButton.style.height = newHeight;
+shortlistButton.style["line-height"] = newHeight;
+shortlistButton.style["font-size"] = newFontSize;
+shortlistButton.style.width = newWidth;
+
+shortlistButtonContainer = document.querySelector('#shortlist-button-container');
+
+"<% if @shortlist.gifts.length == 0 %> "
+  shortlistButtonContainer.classList.remove("shortlist-appear");
+  shortlistButtonContainer.classList.add("shortlist-btn-hide");
+"<% end %>"
+
+"<% if @shortlist.gifts.length < 10 %> "
+  shortlistButtonContainer.classList.remove("shortlist-shake");
+"<% end %>"

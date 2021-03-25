@@ -1,4 +1,4 @@
-<div class="container edit-form">
+<div class="container home-form edit-form">
   <h3>Get creative!</h3>
   <%= simple_form_for [@shortlist] do |f| %>
     <%= f.input :recipient_name,
@@ -11,6 +11,6 @@
           label: "What do they ❤️ ?",
           input_html: { class: "tag-selector" },
           item_wrapper_class: 'tag-item' %>
-    <%= f.button :submit, "Get swiping", class: "btn-primary", width: "100%" %>
+    <%= f.button :submit, "Start swiping", class: "btn-primary", width: "100%" %>
   <% end %>
 </div>

@@ -9,6 +9,31 @@ acceptSelector.classList.add('gift-selector-hidden')
 shortlist = document.querySelector("#shortlisted-gifts")
 giftCard = hideElement.querySelector('.gift')
 
+//Shortlist counter and resizing:
+shortlistCounter = document.querySelector("#shortlist-counter")
+shortlistCounter.innerText = "<%= @shortlist.gifts.length %>"
+shortlistButton = document.querySelector('#shortlist-button')
+newWidth = "<%= 140 + 20 * [@shortlist.gifts.length, 5].min %>px";
+newHeight = "<%= 40 + 8 * [@shortlist.gifts.length, 5].min %>px";
+newFontSize = "<%= (40 + 8 * [@shortlist.gifts.length, 5].min)/2 %>px";
+shortlistButton.style.height = newHeight;
+shortlistButton.style["line-height"] = newHeight;
+shortlistButton.style["font-size"] = newFontSize;
+shortlistButton.style.width = newWidth;
+shortlistButtonContainer = document.querySelector('#shortlist-button-container');
+
+"<% if @shortlist.gifts.length == 1 %> "
+  shortlistButtonContainer.classList.add("shortlist-appear");
+  shortlistButtonContainer.classList.remove("shortlist-btn-hide");
+"<% end %>"
+
+"<% if @shortlist.gifts.length >= 5 %> "
+  shortlistButtonContainer.classList.remove("shortlist-appear");
+  shortlistButtonContainer.classList.add("shortlist-shake");
+"<% end %>"
+
+
+
 "<% if @added == 'true' %> "
   newSG = document.createElement("div");
   newSG.innerHTML = "<%= escape_javascript render 'components/shortlist_card', session_gift: @session_gift %>";

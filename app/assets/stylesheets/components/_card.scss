@@ -41,6 +41,8 @@
   }
 
   button {
+    opacity: 0.9;
+    text-decoration: none;
     margin: 0 auto;
     padding: 15px;
     width: 50%;
@@ -48,7 +50,12 @@
     font-size: 25px;
     background-color: #99DDCC;
     border: none;
-    box-shadow: 0 5px 5px rgba(0,0,0,.3);
+  }
+}
+
+.card button {
+  &:hover {
+    opacity: 1;
   }
 }
 
@@ -59,3 +66,36 @@
     color: white;
   }
 }
+
+a:hover {
+  text-decoration: none;
+}
+
+
+
+@keyframes spinning {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(720deg) }
+}
+
+.card-bow-img {
+  animation-name: spinning;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
+  /* linear | ease | ease-in | ease-out | ease-in-out */
+  animation-timing-function: ease-out;
+}
+
+@keyframes hover-spinning {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
+}
+
+.card-bow-img:hover {
+  animation-name: hover-spinning;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
+  /* linear | ease | ease-in | ease-out | ease-in-out */
+  animation-timing-function: ease-out;
+}
+
