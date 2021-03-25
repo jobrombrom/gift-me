@@ -1,9 +1,7 @@
-<div class="container">
-  <div class="shortlist-recipient-cards-grid">
+<div class="container overflow">
+  <div class="shortlist-recipient-cards">
     <% current_user.shortlists.each do |shortlist| %>
-    <div class="row-center">
       <%= render 'components/shortlist', shortlist: shortlist %>
-    </div>
     <% end %>
   </div>
 </div>

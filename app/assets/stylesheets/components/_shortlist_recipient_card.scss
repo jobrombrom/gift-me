@@ -1,22 +1,26 @@
-.shortlist-recipient-cards-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  margin: 16px;
-  flex-grow: 1;
+.shortlist-recipient-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .shortlist-recipient-card {
-  width: 300px;
-  height: 300px;
+  flex: 0 1 auto;
+  position: relative;
   background: $light-gray;
   box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
   border-radius: 20px;
   padding: 10px;
+  margin: 10px;
+  overflow-y: scroll;
 
   h2 {
     text-align: center;
     color: #F59FA6;
+  }
+
+  p {
+    text-align: center;
   }
 }
 
@@ -26,4 +30,22 @@
   border: 2px solid #99DDCC;
   padding: 0px 1rem 0px 1rem;
   border-radius: 20px;
+}
+
+.shortlist-image-gift {
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+}
+
+.shortlist-delete-edit {
+  margin-top: 3%;
+  text-align: center;
+}
+
+.link-style {
+  &:hover {
+    text-decoration: none;
+  }
 }

@@ -1,12 +1,17 @@
-<div class="shortlist-recipient-card">
-  <div class="shortlist-recipient-card-info">
-      <h2><%= shortlist.recipient_name %></h2>
-        <% interests = shortlist.interest.split('"') %>
-        <% interests.select! { |i| i =~ /[A-Z]/ } %>
-        <% interests.each do |interest| %>
-        <p class="category-pills"><%= interest %></p>
+<%= link_to shortlist_gifts_path(shortlist), class: "link-style" do %>
+  <div class="shortlist-recipient-card">
+    <div class="shortlist-recipient-card-info">
+        <h2><%= shortlist.recipient_name %></h2>
+        <p>Created at: <%= shortlist.created_at %></p>
+        <% shortlist.gifts.each do |gift | %>
+        <img class="shortlist-image-gift" src=<%= gift.image %> alt= <%= gift.title %>>
         <% end %>
+      </div>
+    <div class="shortlist-delete-edit">
+      <ul class="list-inline">
+        <li class="list-inline-item"><%= link_to '🗑️', shortlist_path(shortlist), method: :delete %></li>
+        <li class="list-inline-item"><%= link_to '✏️', edit_shortlist_path(shortlist) %></li>
+      </ul>
     </div>
-    <div><%= link_to '🗑️', shortlist_path(shortlist), method: :delete %></div>
-    <div><%= link_to '✏️', edit_shortlist_path(shortlist) %></div>
-</div>
+  </div>
+<% end %>
