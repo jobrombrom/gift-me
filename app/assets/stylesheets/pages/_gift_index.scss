@@ -41,7 +41,7 @@ body {
   height: auto;
   bottom: 15%;
   left: 7.5%;
-  opacity: 0.90;
+  opacity: 0.75;
   transform: rotate(30deg);
 }
 
@@ -52,7 +52,7 @@ body {
   bottom: 22%;
   right: 1%;
   transform: rotate(-5deg);
-  opacity: 0.95;
+  opacity: 0.75;
 }
 
 
@@ -65,7 +65,7 @@ body {
   top: 0;
   left: 9%;
   // transform: rotate(45deg);
-  opacity: 0.95;
+  opacity: 0.75;
 }
 
 @keyframes slidedown {
@@ -79,7 +79,7 @@ body {
   animation-fill-mode: forwards;
 }
 
-#message { 
+#message {
   transition: 0.5s;
   // background: -webkit-linear-gradient(#b8860b, #daa520, #b8860b);
   // -webkit-background-clip: text;
