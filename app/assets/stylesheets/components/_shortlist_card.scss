@@ -43,16 +43,26 @@
 }
 
 .gift-btn{
-  width:64px;
-  height: 64px;
-  // border-radius: 50%;
-  border: 5px solid $green;
-  cursor: pointer;
-  line-height: 64px;
+  display:block;
+  border-radius: 12px;
+  font-weight: bold;
+  width:90px;
+  height:40px;
+  color: #F4F4F4;
+  background-color: #99DDCC;
   text-align: center;
-  vertical-align: center;
-  border-radius: 50%;
-  margin: 16px;
+  line-height: 40px;
+  text-decoration: none;
+  font-size: 15px;
+  margin: 10px 20px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.gift-btn:hover {
+  background-color: #45D8B3;
+  color: #F4F4F4;
+  text-decoration: none;
 }
 
 
