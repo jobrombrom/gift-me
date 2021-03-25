@@ -13,9 +13,9 @@ giftCard = hideElement.querySelector('.gift')
 shortlistCounter = document.querySelector("#shortlist-counter")
 shortlistCounter.innerText = "<%= @shortlist.gifts.length %>"
 shortlistButton = document.querySelector('#shortlist-button')
-newWidth = "<%= 140 + 10 * [@shortlist.gifts.length, 10].min %>px";
-newHeight = "<%= 40 + 4 * [@shortlist.gifts.length, 10].min %>px";
-newFontSize = "<%= (40 + 4 * [@shortlist.gifts.length, 10].min)/2 %>px";
+newWidth = "<%= 140 + 20 * [@shortlist.gifts.length, 5].min %>px";
+newHeight = "<%= 40 + 8 * [@shortlist.gifts.length, 5].min %>px";
+newFontSize = "<%= (40 + 8 * [@shortlist.gifts.length, 5].min)/2 %>px";
 shortlistButton.style.height = newHeight;
 shortlistButton.style["line-height"] = newHeight;
 shortlistButton.style["font-size"] = newFontSize;
@@ -27,7 +27,7 @@ shortlistButtonContainer = document.querySelector('#shortlist-button-container')
   shortlistButtonContainer.classList.remove("shortlist-btn-hide");
 "<% end %>"
 
-"<% if @shortlist.gifts.length >= 10 %> "
+"<% if @shortlist.gifts.length >= 5 %> "
   shortlistButtonContainer.classList.remove("shortlist-appear");
   shortlistButtonContainer.classList.add("shortlist-shake");
 "<% end %>"
