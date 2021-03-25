@@ -51,23 +51,25 @@
   background-color: #FFFFFF;
   border-radius: 0 0 48px 48px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 1.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .gift-title {
+  text-align: left;
   font-family: 'Raleway', sans-serif;
   font-weight: bolder;
   color: #1D2951;
-  font-size: 30px;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
 }
 
 .gift-price {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 1.25rem;
+  right: 1.25rem;
   font-family: 'Raleway', sans-serif;
   color: #1D2951;
   font-weight: bolder;
@@ -77,23 +79,20 @@
 
 .gift-category {
   position: absolute;
-  bottom: 2rem;
-  left: 2rem;
+  bottom: 1.25rem;
+  left: 1.25rem;
   color: white;
-  background-color: #99DDCC;
-  border: 2px solid #99DDCC;
-  padding: 0px 1rem 0px 1rem;
+  background-color: $blue;
+  border: 2px solid $blue;
+  padding: 0.2rem 1.5rem 0.2rem 1.5rem;
   border-radius: 20px;
 }
 
 
-
 .gift-details p {
   margin-bottom: 0;
+  font-size: 1.4rem;
 }
-
-
-//Animations and state changes on accept / reject
 
 .gift-selector-hidden {
   display:none;
@@ -102,26 +101,3 @@
 .gift-show {
   opacity: 1;
 }
-
-// @keyframes reject {
-//   from {}
-//   to {height:0px; width:0px; opacity:0; transform: translate(-550px, -100px); color:white;}
-// }
-
-// @keyframes accept {
-//   from {}
-//   to {height:0px; width:0px; opacity:0; transform: translate(0px, 400px); color:white;}
-// }
-
-
-// .gift-hidden-accept {
-//   animation-name: accept;
-//   animation-duration: 0.7s;
-//   animation-fill-mode: forwards;
-// }
-
-// .gift-hidden-reject {
-//   animation-name: reject;
-//   animation-duration: 0.7s;
-//   animation-fill-mode: forwards;
-// }
