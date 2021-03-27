@@ -4,7 +4,7 @@
         <img class="card-img card-img-top" src=<%= gift.image %> alt= <%= gift.title %>>
         <div class="card-body">
             <h5 class="card-title text-truncate"><%= gift.title %></h5>
-            <p class="card-text text-truncate"><%= gift.description %></p>
+            <p class="card-text final-card-text"><%= gift.description %></p>
             <p class="card-price">£<%= gift.price %></p>
         </div>
         <button><%= link_to 'Get your gift', gift.link, class: "link-text", target: :_blank %></button>
