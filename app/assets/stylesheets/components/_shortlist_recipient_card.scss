@@ -49,3 +49,33 @@
     text-decoration: none;
   }
 }
+
+.shortlist-recipient-trash-btn {
+  background: #F4F4F4;
+  padding: 4px;
+  color: #EE6B76;
+}
+
+.shortlist-recipient-trash-btn i {
+  font-size: 18px;
+  color: #EE6B76;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.shortlist-recipient-edit-btn {
+  background: #F4F4F4;
+  padding: 4px;
+  color: #EE6B76;
+}
+
+.shortlist-recipient-edit-btn i {
+  font-size: 18px;
+  color: #EE6B76;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
+}

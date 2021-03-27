@@ -9,8 +9,8 @@
       </div>
     <div class="shortlist-delete-edit">
       <ul class="list-inline">
-        <li class="list-inline-item"><%= link_to '🗑️', shortlist_path(shortlist), method: :delete %></li>
-        <li class="list-inline-item"><%= link_to '✏️', edit_shortlist_path(shortlist) %></li>
+        <li class="list-inline-item"><%= link_to raw('<i class="fas fa-trash-alt"></i>'), shortlist_path(shortlist), method: :delete, class: "shortlist-recipient-trash-btn" %></li>
+        <li class="list-inline-item"><%= link_to raw('<i class="far fa-edit"></i>'), edit_shortlist_path(shortlist), class: "shortlist-recipient-edit-btn" %></li>
       </ul>
     </div>
   </div>
