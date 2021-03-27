@@ -30,9 +30,10 @@
   }
 
   .card-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 30px;
-  text-align: center;
+    color: #1D2951;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    text-align: center;
   }
 
   .card-price {
@@ -100,3 +101,15 @@ a:hover {
   animation-timing-function: ease-out;
 }
 
+.final-card-text {
+  color: #1D2951;
+  margin: 0;
+  line-height: 1.5;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
