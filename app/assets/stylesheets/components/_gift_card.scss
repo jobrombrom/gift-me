@@ -65,7 +65,6 @@
   font-size: 1.4rem;
   overflow: hidden;
   line-height: 1.5;
-  opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
   margin-bottom: 1rem;
@@ -75,6 +74,7 @@
 }
 
 .gift-price {
+  opacity: 0.7;
   position: absolute;
   top: 1.25rem;
   right: 1.25rem;
